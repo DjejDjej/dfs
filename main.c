@@ -2,18 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "config.h"
 
-typedef struct {
-  const char cz[10];
-  const char en[10];
-
-} Month;
-
-Month m[] = {
-    {"leden", "january"}, {"unor", "february"},     {"brezen", "march"},
-    {"duben", "april"},   {"kveten", "may"},        {"cerven", "june"},
-    {"cervenec", "july"}, {"srpen", "august"},      {"zari", "september"},
-    {"ríjen", "october"}, {"listopad", "november"}, {"prosinec", "december"}};
 
 int printMonth(int mi, int s) {
   if (s == 1)
