@@ -10,8 +10,18 @@ void printHelp() {
          "\"Prosinec\").\n");
   printf("Examples:\n");
   printf("   ./program 1\n");
-  printf("   ./program January\n");
-  printf("   ./program Pro\n");
+  printf("   ./program january\n");
+  printf("   ./program prosinec \n");
+}
+
+
+char *toLowerStr(char *str) {
+    int i = 0;
+    while (str[i]) {
+        str[i] = tolower((unsigned char) str[i]);
+        i++;
+    }
+    return str; // Return the modified string
 }
 
 int printMonth(int mi, int s) {
@@ -24,6 +34,8 @@ int printMonth(int mi, int s) {
 }
 
 int fromName(char *arg) {
+  arg = toLowerStr(arg);
+
   for (size_t j = 0; j <= 11; j++) {
     if ((strcmp(m[j].cz, arg) == 0) || (strcmp(m[j].en, arg)) == 0 ||
         (strcmp(m[j].czD, arg) == 0)) {
