@@ -1,7 +1,7 @@
-## Dates for stupid 
+# Dates for stupid 
 month number/name/CzechName converter
 
-git clone https://github.com/DjejDjej/dfs.git
-cd dfs
-sudo make install
-
+### Install
+1. git clone https://github.com/DjejDjej/dfs.git
+1 .cd dfs
+1 .sudo make install
