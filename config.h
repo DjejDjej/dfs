@@ -1,5 +1,3 @@
-#ifndef CONFIG_H
-#define CONFIG_H
 
 // Define the Month struct
 typedef struct {
@@ -15,4 +13,3 @@ Month m[] = {
     {"rijen", "october"}, {"listopad", "november"}, {"prosinec", "december"}
 };
 
-#endif // CONFIG_H
