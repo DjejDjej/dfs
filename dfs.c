@@ -14,14 +14,13 @@ void printHelp() {
   printf("   ./program prosinec \n");
 }
 
-
 char *toLowerStr(char *str) {
-    int i = 0;
-    while (str[i]) {
-        str[i] = tolower((unsigned char) str[i]);
-        i++;
-    }
-    return str; // Return the modified string
+  int i = 0;
+  while (str[i]) {
+    str[i] = tolower((unsigned char)str[i]);
+    i++;
+  }
+  return str; // Return the modified string
 }
 
 int printMonth(int mi, int s) {
@@ -43,6 +42,7 @@ int fromName(char *arg) {
       return 0;
     }
   }
+
   return 1;
 }
 
@@ -53,6 +53,7 @@ int fromNumber(char *arg, size_t len) {
   }
   int val = atoi(arg);
   if (val <= 0 || val > 12) {
+
     return 1;
   }
   printMonth(val, 1);
@@ -62,16 +63,16 @@ int fromNumber(char *arg, size_t len) {
 int findMonth(char *arg) {
   size_t len = strlen(arg);
   if (len == 1 || len == 2) {
-    if (fromNumber(arg, len) == 1) {
-      return 1;
+    if (fromNumber(arg, len) == 0) {
+      return 0;
     }
   }
 
-  if (fromName(arg) == 1) {
-    return 1;
+  if (fromName(arg) == 0) {
+    return 0;
   }
 
-  return 0;
+  return 1;
 }
 
 int main(int argc, char *argv[]) {
@@ -81,8 +82,7 @@ int main(int argc, char *argv[]) {
     return 1;
     printf("Invalid month input.\n");
   }
-
-  if (findMonth(argv[1]) != 0) {
+  if (findMonth(argv[1]) == 1) {
 
     printHelp();
     printf("Invalid month input.\n");
